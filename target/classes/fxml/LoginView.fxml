@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.erms.controller.LoginController"
+      alignment="CENTER"
+      spacing="0"
+      styleClass="login-root">
+
+    <!-- Header Banner -->
+    <VBox styleClass="login-header" alignment="CENTER">
+        <padding><Insets top="40" bottom="30" left="40" right="40"/></padding>
+    </VBox>
+
+    <!-- Card -->
+    <VBox styleClass="login-card" alignment="CENTER" spacing="16">
+        <padding><Insets top="36" bottom="36" left="48" right="48"/></padding>
+
+        <Label text="Sign In to Your Account" styleClass="login-card-title"/>
+
+        <!-- Username -->
+        <VBox spacing="4">
+            <Label text="Username" styleClass="field-label"/>
+            <TextField fx:id="usernameField"
+                       promptText="Enter username"
+                       styleClass="input-field"/>
+        </VBox>
+
+        <!-- Password -->
+        <VBox spacing="4">
+            <Label text="Password" styleClass="field-label"/>
+            <PasswordField fx:id="passwordField"
+                           promptText="Enter password"
+                           styleClass="input-field"/>
+        </VBox>
+
+        <!-- Error label -->
+        <Label fx:id="errorLabel" styleClass="error-label" text="" wrapText="true"/>
+
+        <!-- Login Button -->
+        <Button fx:id="loginButton"
+                text="LOGIN"
+                styleClass="btn-primary"
+                maxWidth="Infinity"
+                onAction="#handleLogin"/>
+
+    </VBox>
+</VBox>

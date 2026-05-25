@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.erms.controller.DashboardController"
+            styleClass="main-root">
+
+    <!-- ── Top Nav Bar ── -->
+    <top>
+        <HBox styleClass="nav-bar" alignment="CENTER_LEFT" spacing="16">
+            <padding><Insets top="12" bottom="12" left="24" right="24"/></padding>
+            <Label text="ERMS" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Dashboard" styleClass="nav-item-active"/>
+            <Button text="Employees" styleClass="nav-btn" onAction="#goToEmployeeRecords"/>
+            <Button text="My Profile" styleClass="nav-btn" onAction="#goToProfile"/>
+            <Button text="Logout" styleClass="nav-btn-danger" onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <!-- ── Center Content ── -->
+    <center>
+        <VBox spacing="28" alignment="TOP_CENTER">
+            <padding><Insets top="36" bottom="36" left="48" right="48"/></padding>
+
+            <!-- Welcome -->
+            <Label fx:id="welcomeLabel" styleClass="page-title"/>
+
+            <!-- Stats Cards Row -->
+            <HBox spacing="24" alignment="CENTER">
+
+                <!-- Total Employees Card -->
+                <VBox styleClass="stat-card" alignment="CENTER" spacing="8">
+                    <padding><Insets top="24" bottom="24" left="32" right="32"/></padding>
+                    <Label text="Total Employees" styleClass="stat-label"/>
+                    <Label fx:id="totalEmployeesLabel" text="—" styleClass="stat-value"/>
+                </VBox>
+
+                <!-- Department Breakdown Card -->
+                <VBox styleClass="stat-card" alignment="TOP_LEFT" spacing="8">
+                    <padding><Insets top="24" bottom="24" left="32" right="32"/></padding>
+                    <Label text="By Department" styleClass="stat-label"/>
+                    <Label fx:id="departmentSummaryLabel" text="—" styleClass="stat-body" wrapText="true"/>
+                </VBox>
+            </HBox>
+
+            <!-- Quick Action Buttons -->
+            <HBox spacing="16" alignment="CENTER">
+                <Button text="➕  Add Employee"
+                        styleClass="btn-primary"
+                        prefWidth="180"
+                        onAction="#goToEmployeeRecords"/>
+                <Button text="📋  View All Records"
+                        styleClass="btn-secondary"
+                        prefWidth="180"
+                        onAction="#goToEmployeeRecords"/>
+                <Button text="👤  My Profile"
+                        styleClass="btn-secondary"
+                        prefWidth="180"
+                        onAction="#goToProfile"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,203 @@
+/* ═══════════════════════════════════════════════════════════════
+   ERMS - styles.css
+   Clean, professional colour palette using deep blue accent.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Root & Background ───────────────────────────────────────── */
+.root { -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; -fx-font-size: 13px; }
+.main-root  { -fx-background-color: #F4F6FB; }
+.login-root { -fx-background-color: #1E2A4A; }
+
+/* ── Navigation Bar ──────────────────────────────────────────── */
+.nav-bar {
+    -fx-background-color: #1E2A4A;
+    -fx-min-height: 52px;
+}
+.nav-brand {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+.nav-item-active {
+    -fx-text-fill: #60A5FA;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CBD5E1;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-border-color: transparent;
+}
+.nav-btn:hover { -fx-text-fill: #FFFFFF; }
+.nav-btn-danger {
+    -fx-background-color: #7F1D1D;
+    -fx-text-fill: #FCA5A5;
+    -fx-cursor: hand;
+    -fx-background-radius: 6;
+    -fx-padding: 4 12 4 12;
+}
+.nav-btn-danger:hover { -fx-background-color: #991B1B; }
+
+/* ── Login Screen ────────────────────────────────────────────── */
+.login-header { -fx-background-color: #1E2A4A; }
+.login-logo   {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 4px;
+}
+.login-subtitle {
+    -fx-text-fill: #93C5FD;
+    -fx-font-size: 13px;
+}
+.login-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0, 0, 4);
+    -fx-max-width: 380;
+}
+.login-card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E2A4A;
+}
+.hint-label {
+    -fx-text-fill: #94A3B8;
+    -fx-font-size: 11px;
+}
+
+/* ── Stat / Dashboard Cards ──────────────────────────────────── */
+.stat-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+    -fx-min-width: 200;
+}
+.stat-label {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 13px;
+}
+.stat-value {
+    -fx-text-fill: #1E2A4A;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+}
+.stat-value-sm {
+    -fx-text-fill: #1E2A4A;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.stat-body {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+}
+
+/* ── Page / Form Titles ──────────────────────────────────────── */
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E2A4A;
+}
+.form-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E2A4A;
+    -fx-border-color: transparent transparent #E2E8F0 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 10 0;
+}
+
+/* ── Panels ──────────────────────────────────────────────────── */
+.table-panel {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent #E2E8F0 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+.form-panel {
+    -fx-background-color: #F8FAFC;
+}
+.form-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 2);
+    -fx-padding: 24;
+}
+
+/* ── Inputs ──────────────────────────────────────────────────── */
+.input-field {
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #CBD5E1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 8 12 8 12;
+}
+.input-field:focused {
+    -fx-border-color: #3B82F6;
+    -fx-background-color: #FFFFFF;
+}
+.field-label {
+    -fx-text-fill: #475569;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.error-label {
+    -fx-text-fill: #DC2626;
+    -fx-font-size: 12px;
+    -fx-max-width: 300;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn-primary {
+    -fx-background-color: #2563EB;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+}
+.btn-primary:hover   { -fx-background-color: #1D4ED8; }
+.btn-primary:pressed { -fx-background-color: #1E40AF; }
+
+.btn-secondary {
+    -fx-background-color: #E2E8F0;
+    -fx-text-fill: #1E293B;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+}
+.btn-secondary:hover { -fx-background-color: #CBD5E1; }
+
+.btn-danger {
+    -fx-background-color: #DC2626;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+}
+.btn-danger:hover { -fx-background-color: #B91C1C; }
+
+/* ── TableView ───────────────────────────────────────────────── */
+.data-table { -fx-background-color: transparent; -fx-border-color: #E2E8F0; }
+.data-table .column-header-background { -fx-background-color: #F1F5F9; }
+.data-table .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #475569;
+}
+.data-table .table-row-cell:selected { -fx-background-color: #DBEAFE; }
+.data-table .table-row-cell:hover    { -fx-background-color: #F0F9FF; }
+.table-placeholder { -fx-text-fill: #94A3B8; }
+
+/* ── Role badge ──────────────────────────────────────────────── */
+.role-badge {
+    -fx-background-color: #DBEAFE;
+    -fx-text-fill: #1D4ED8;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-background-radius: 20;
+    -fx-padding: 2 10 2 10;
+}

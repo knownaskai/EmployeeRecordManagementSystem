@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.erms.controller.EmployeeRecordsController"
+            styleClass="main-root">
+
+    <!-- ── Top Nav ── -->
+    <top>
+        <HBox styleClass="nav-bar" alignment="CENTER_LEFT" spacing="16">
+            <padding><Insets top="12" bottom="12" left="24" right="24"/></padding>
+            <Label text="ERMS" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Dashboard" styleClass="nav-btn" onAction="#goToDashboard"/>
+            <Label text="Employee Records" styleClass="nav-item-active"/>
+        </HBox>
+    </top>
+
+    <!-- ── Main Content: Table + Form ── -->
+    <center>
+        <HBox spacing="0">
+
+            <!-- Left: Table Panel -->
+            <VBox styleClass="table-panel" spacing="12" HBox.hgrow="ALWAYS">
+                <padding><Insets top="20" bottom="20" left="20" right="12"/></padding>
+
+                <!-- Search row -->
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchField"
+                               promptText="Search name, department, email..."
+                               styleClass="input-field"
+                               HBox.hgrow="ALWAYS"/>
+                    <Button text="Search" styleClass="btn-secondary" onAction="#handleSearch"/>
+                    <Button text="New +" styleClass="btn-primary" onAction="#handleNewEmployee"/>
+                    <Button text="Delete" styleClass="btn-danger" onAction="#handleDelete"/>
+                </HBox>
+
+                <!-- Table -->
+                <TableView fx:id="employeeTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                    <columns>
+                        <TableColumn fx:id="colId"         text="ID"         prefWidth="50"/>
+                        <TableColumn fx:id="colFirstName"  text="First Name"  prefWidth="110"/>
+                        <TableColumn fx:id="colLastName"   text="Last Name"   prefWidth="110"/>
+                        <TableColumn fx:id="colDepartment" text="Department"  prefWidth="120"/>
+                        <TableColumn fx:id="colPosition"   text="Position"    prefWidth="130"/>
+                        <TableColumn fx:id="colSalary"     text="Salary"      prefWidth="100"/>
+                        <TableColumn fx:id="colStatus"     text="Status"      prefWidth="80"/>
+                    </columns>
+                    <placeholder><Label text="No employees found." styleClass="table-placeholder"/></placeholder>
+                </TableView>
+            </VBox>
+
+            <!-- Right: Form Panel -->
+            <VBox styleClass="form-panel" spacing="12" prefWidth="320">
+                <padding><Insets top="20" bottom="20" left="12" right="20"/></padding>
+
+                <Label fx:id="formTitleLabel" text="Add New Employee" styleClass="form-title"/>
+
+                <Label text="First Name *" styleClass="field-label"/>
+                <TextField fx:id="firstNameField" promptText="First name" styleClass="input-field"/>
+
+                <Label text="Last Name *" styleClass="field-label"/>
+                <TextField fx:id="lastNameField" promptText="Last name" styleClass="input-field"/>
+
+                <Label text="Email *" styleClass="field-label"/>
+                <TextField fx:id="emailField" promptText="email@example.com" styleClass="input-field"/>
+
+                <Label text="Phone" styleClass="field-label"/>
+                <TextField fx:id="phoneField" promptText="+63 912 345 6789" styleClass="input-field"/>
+
+                <Label text="Department *" styleClass="field-label"/>
+                <ComboBox fx:id="departmentBox" maxWidth="Infinity" styleClass="input-field"/>
+
+                <Label text="Position" styleClass="field-label"/>
+                <TextField fx:id="positionField" promptText="Job title" styleClass="input-field"/>
+
+                <Label text="Salary *" styleClass="field-label"/>
+                <TextField fx:id="salaryField" promptText="0.00" styleClass="input-field"/>
+
+                <Label text="Hire Date" styleClass="field-label"/>
+                <DatePicker fx:id="hireDatePicker" maxWidth="Infinity"/>
+
+                <Label text="Status *" styleClass="field-label"/>
+                <ComboBox fx:id="statusBox" maxWidth="Infinity" styleClass="input-field"/>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <HBox spacing="8">
+                    <Button fx:id="saveButton" text="Save" styleClass="btn-primary"
+                            onAction="#handleSave" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                    <Button text="Clear" styleClass="btn-secondary"
+                            onAction="#handleClear" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                </HBox>
+            </VBox>
+
+        </HBox>
+    </center>
+</BorderPane>
