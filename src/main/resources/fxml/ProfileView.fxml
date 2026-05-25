@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.erms.controller.ProfileController"
+            styleClass="main-root">
+
+    <!-- ── Nav ── -->
+    <top>
+        <HBox styleClass="nav-bar" alignment="CENTER_LEFT" spacing="16">
+            <padding><Insets top="12" bottom="12" left="24" right="24"/></padding>
+            <Label text="ERMS" styleClass="nav-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="← Dashboard" styleClass="nav-btn" onAction="#goToDashboard"/>
+            <Label text="My Profile" styleClass="nav-item-active"/>
+        </HBox>
+    </top>
+
+    <!-- ── Content ── -->
+    <center>
+        <HBox spacing="32" alignment="TOP_CENTER">
+            <padding><Insets top="36" bottom="36" left="48" right="48"/></padding>
+
+            <!-- Profile Info Card -->
+            <VBox styleClass="form-card" spacing="14" prefWidth="280">
+                <Label text="Profile Information" styleClass="form-title"/>
+
+                <HBox spacing="8">
+                    <Label text="Username:" styleClass="field-label"/>
+                    <Label fx:id="usernameLabel" styleClass="stat-value-sm"/>
+                </HBox>
+                <HBox spacing="8">
+                    <Label text="Role:" styleClass="field-label"/>
+                    <Label fx:id="roleLabel" styleClass="role-badge"/>
+                </HBox>
+
+                <Label text="Full Name" styleClass="field-label"/>
+                <TextField fx:id="fullNameField" styleClass="input-field"/>
+
+                <Label text="Email" styleClass="field-label"/>
+                <TextField fx:id="emailField" styleClass="input-field"/>
+
+                <Button text="Save Profile" styleClass="btn-primary"
+                        maxWidth="Infinity" onAction="#handleSaveProfile"/>
+            </VBox>
+
+            <!-- Change Password Card -->
+            <VBox styleClass="form-card" spacing="14" prefWidth="280">
+                <Label text="Change Password" styleClass="form-title"/>
+
+                <Label text="Current Password" styleClass="field-label"/>
+                <PasswordField fx:id="currentPasswordField" styleClass="input-field"/>
+
+                <Label text="New Password" styleClass="field-label"/>
+                <PasswordField fx:id="newPasswordField" styleClass="input-field"/>
+
+                <Label text="Confirm New Password" styleClass="field-label"/>
+                <PasswordField fx:id="confirmPasswordField" styleClass="input-field"/>
+
+                <Button text="Change Password" styleClass="btn-secondary"
+                        maxWidth="Infinity" onAction="#handleChangePassword"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
